@@ -3,11 +3,12 @@ package sbertest.counter.repository;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 @Repository
 public class CounterRepositoryImpl implements CounterRepository {
 
-    private static Map<String, Integer> map = new HashMap<>();
+    private Map<String, Integer> map = new ConcurrentHashMap<>();
 
     @Override
     public void createCounter(String name) {

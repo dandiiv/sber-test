@@ -1,5 +1,6 @@
 package sbertest.counter.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import sbertest.counter.repository.CounterRepository;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +11,7 @@ public class CounterServiceImpl implements CounterService {
 
     private final CounterRepository counterRepository;
 
+    @Autowired
     public CounterServiceImpl(CounterRepository counterRepository) {
         this.counterRepository = counterRepository;
     }
